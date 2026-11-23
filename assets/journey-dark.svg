@@ -137,8 +137,8 @@
 <path d="M 955 476 L 981 483 L 955 490 Z" fill="#30d158"/>
 <circle cx="33" cy="578" r="4.5" fill="#0071e3"/>
 <text x="43" y="582" font-size="12" class="muted">Languages</text>
-<circle cx="131.32000000000002" cy="578" r="4.5" fill="#ff375f"/>
-<text x="141.32000000000002" y="582" font-size="12" class="muted">Web</text>
+<circle cx="131.32" cy="578" r="4.5" fill="#ff375f"/>
+<text x="141.32" y="582" font-size="12" class="muted">Web</text>
 <circle cx="191.48000000000002" cy="578" r="4.5" fill="#30b0c7"/>
 <text x="201.48000000000002" y="582" font-size="12" class="muted">Data &amp; ledgers</text>
 <circle cx="314.40000000000003" cy="578" r="4.5" fill="#ff9f0a"/>
