@@ -18,7 +18,7 @@
 </style>
 
 <rect x="8" y="8" width="464" height="208" rx="22" fill="#ffffff" stroke="#e5e5ea" stroke-width="1" filter="url(#shadow)"/>
-<text x="34" y="50" font-size="12" font-weight="600" letter-spacing="0.6" style="fill:#d70015">BUILT</text>
+<text x="34" y="50" font-size="12" font-weight="600" letter-spacing="0.6" style="fill:#d70015">SECURITY</text>
 <text x="34" y="88" font-size="26" font-weight="700" letter-spacing="-0.5">Kavach</text>
 <text x="34" y="118" font-size="15" class="muted">Local security guard for AI coding agents:</text>
 <text x="34" y="139" font-size="15" class="muted">blocks leaked secrets and prompt injection</text>

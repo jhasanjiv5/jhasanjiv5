@@ -18,7 +18,7 @@
 </style>
 
 <rect x="8" y="8" width="464" height="208" rx="22" fill="#ffffff" stroke="#e5e5ea" stroke-width="1" filter="url(#shadow)"/>
-<text x="34" y="50" font-size="12" font-weight="600" letter-spacing="0.6" style="fill:#248a3d">BUILT</text>
+<text x="34" y="50" font-size="12" font-weight="600" letter-spacing="0.6" style="fill:#248a3d">ON-DEVICE AI</text>
 <text x="34" y="88" font-size="26" font-weight="700" letter-spacing="-0.5">Saathi</text>
 <text x="34" y="118" font-size="15" class="muted">An audio companion that narrates where you</text>
 <text x="34" y="139" font-size="15" class="muted">walk, without ever storing your location</text>
