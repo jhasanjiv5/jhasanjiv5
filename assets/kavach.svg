@@ -1,24 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 214" width="480" height="214" role="img" aria-label="Kavach: Local security guard for AI coding agents: blocks leaked secrets and prompt injection">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 224" width="480" height="224" role="img" aria-label="Kavach: Local security guard for AI coding agents: blocks leaked secrets and prompt injection">
 <title>Kavach: Local security guard for AI coding agents: blocks leaked secrets and prompt injection</title>
+<defs>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="4" stdDeviation="9" flood-color="#000000" flood-opacity=".08"/>
+  </filter>
+  <filter id="soft" x="-10%" y="-10%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity=".08"/>
+  </filter>
+</defs>
 <style>
-  text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif; fill: #1f2328; }
-  .muted { fill: #59636e; }
+  text { font-family: -apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif; fill: #1d1d1f; }
+  .muted { fill: #6e6e73; }
   .pulse { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
   @keyframes pulse { 50% { opacity: .35; transform: scale(1.6); } }
-  .twinkle { animation: twinkle 4s ease-in-out infinite; }
-  @keyframes twinkle { 50% { opacity: .15; } }
+  .drift { animation: drift 18s ease-in-out infinite alternate; }
+  @keyframes drift { to { transform: translate(40px, 10px); } }
 </style>
 
-<defs><clipPath id="clip-kavach-light"><rect x="1" y="1" width="478" height="212" rx="12"/></clipPath></defs>
-<rect x="1" y="1" width="478" height="212" rx="12" fill="#ffffff" stroke="#d0d7de"/>
-<rect x="0" y="0" width="480" height="5" fill="#c2410c" clip-path="url(#clip-kavach-light)"/>
-<rect x="24" y="26" width="54" height="22" rx="11" fill="#c2410c" fill-opacity=".12"/>
-<text x="51" y="41" font-size="11" font-weight="700" letter-spacing=".8" text-anchor="middle" style="fill:#c2410c">BUILT</text>
-<text x="24" y="86" font-size="24" font-weight="700">Kavach</text>
-<text x="24" y="116" font-size="15" class="muted">Local security guard for AI coding agents:</text>
-<text x="24" y="137" font-size="15" class="muted">blocks leaked secrets and prompt injection</text>
-<rect x="24.0" y="162" width="35.8" height="24" rx="12.0" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/><text x="41.9" y="178.3" font-size="12" text-anchor="middle">Go</text>
-<rect x="67.8" y="162" width="78.8" height="24" rx="12.0" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/><text x="107.2" y="178.3" font-size="12" text-anchor="middle">Local LLM</text>
-<rect x="154.6" y="162" width="90.6" height="24" rx="12.0" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/><text x="199.9" y="178.3" font-size="12" text-anchor="middle">Agent hooks</text>
-<text x="456" y="179" font-size="14" font-weight="600" text-anchor="end" style="fill:#0a66c2">View →</text>
+<rect x="8" y="8" width="464" height="208" rx="22" fill="#ffffff" stroke="#e5e5ea" stroke-width="1" filter="url(#shadow)"/>
+<text x="34" y="50" font-size="12" font-weight="600" letter-spacing="0.6" style="fill:#d70015">BUILT</text>
+<text x="34" y="88" font-size="26" font-weight="700" letter-spacing="-0.5">Kavach</text>
+<text x="34" y="118" font-size="15" class="muted">Local security guard for AI coding agents:</text>
+<text x="34" y="139" font-size="15" class="muted">blocks leaked secrets and prompt injection</text>
+<rect x="34.0" y="162" width="37.8" height="26" rx="13.0" fill="#f5f5f7"/><text x="52.9" y="179.3" font-size="12" font-weight="500" text-anchor="middle">Go</text>
+<rect x="79.8" y="162" width="80.8" height="26" rx="13.0" fill="#f5f5f7"/><text x="120.2" y="179.3" font-size="12" font-weight="500" text-anchor="middle">Local LLM</text>
+<rect x="168.6" y="162" width="92.6" height="26" rx="13.0" fill="#f5f5f7"/><text x="214.9" y="179.3" font-size="12" font-weight="500" text-anchor="middle">Agent hooks</text>
+<text x="446" y="180" font-size="14" font-weight="500" text-anchor="end" style="fill:#0071e3">Learn more ›</text>
 </svg>

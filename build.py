@@ -38,7 +38,7 @@ PROFILE = dict(
     headline="Applied AI researcher who ships",
     subline="PhD, AI & Ubiquitous Computing · University of St.Gallen",
     themes=["Explainable AI", "Privacy-aware AI", "Ambient intelligence"],
-    #open_to="Open to applied-AI & ML engineering roles",
+    open_to="Open to applied-AI & ML engineering roles",
     where="Switzerland · Germany · Remote",
     stats=[("7", "peer-reviewed papers"), ("6 yrs", "applied AI research"),
            ("29", "apps built in 30 days"), ("10+", "students mentored")],
@@ -49,22 +49,22 @@ PROFILE = dict(
 
 LAB = "https://github.com/jhasanjiv5/30_day_30_ideas"
 PROJECTS = [
-    dict(slug="lab", kind="Built", title="30 Ideas · 30 Days", accent="#0a66c2",
+    dict(slug="lab", kind="Built", title="30 Ideas · 30 Days", accent="blue",
          line1="29 AI prototypes in a month, each scored", line2="for maturity, research and business value",
          stack=["Swift", "TypeScript", "Go", "Python"], url=LAB),
-    dict(slug="aces", kind="Research", title="ACES", accent="#7c3aed",
+    dict(slug="aces", kind="Research", title="ACES", accent="indigo",
          line1="Actionable, contextual explanations", line2="for smart environments",
          stack=["Knowledge graphs", "SPARQL", "XAI"], url="https://github.com/jhasanjiv5/ContexualExplainerSystem"),
-    dict(slug="kavach", kind="Built", title="Kavach", accent="#c2410c",
+    dict(slug="kavach", kind="Built", title="Kavach", accent="red",
          line1="Local security guard for AI coding agents:", line2="blocks leaked secrets and prompt injection",
          stack=["Go", "Local LLM", "Agent hooks"], url=f"{LAB}/tree/main/kavach"),
-    dict(slug="drishya", kind="Built", title="Drishya", accent="#b45309",
+    dict(slug="drishya", kind="Built", title="Drishya", accent="orange",
          line1="Turns research papers into narrated,", line2="cited video podcasts with grounded Q&A",
          stack=["FastAPI", "React", "Manim", "RAG"], url=f"{LAB}/tree/main/drishya"),
-    dict(slug="saathi", kind="Built", title="Saathi", accent="#0f766e",
+    dict(slug="saathi", kind="Built", title="Saathi", accent="green",
          line1="An audio companion that narrates where you", line2="walk, without ever storing your location",
          stack=["Swift 6", "On-device LLM", "HealthKit"], url=f"{LAB}/tree/main/Saathi"),
-    dict(slug="compliance", kind="Built", title="ComplianceCopilot", accent="#1d4ed8",
+    dict(slug="compliance", kind="Built", title="ComplianceCopilot", accent="purple",
          line1="Ask questions of compliance documents", line2="with local LLMs and vector search",
          stack=["FastAPI", "React", "Local RAG"], url="https://github.com/jhasanjiv5/ComplianceCopilot"),
 ]
@@ -98,7 +98,7 @@ JOURNEY = [
         ("2026", "30 Ideas · 30 Days", "29 AI prototypes", [("Swift", "apple"), ("Go", "lang"), ("TypeScript", "web")]),
     ],
 ]
-TECH_COLORS = dict(lang="#0a66c2", web="#c2410c", data="#0f766e", iot="#b45309", ai="#7c3aed", apple="#db2777")
+TECH_COLORS = dict(lang="#0071e3", web="#ff375f", data="#30b0c7", iot="#ff9f0a", ai="#af52de", apple="#34c759")
 TECH_LABELS = dict(lang="Languages", web="Web", data="Data & ledgers", iot="IoT", ai="AI / ML", apple="Apple")
 
 TOOLBOX = [
@@ -108,15 +108,28 @@ TOOLBOX = [
 ]
 
 # ---------------------------------------------------------------------------
-# Design tokens (GitHub-like neutrals, LinkedIn-like blue)
+# Design tokens: Apple system colours and type, LinkedIn-style layout
 # ---------------------------------------------------------------------------
 THEMES = {
-    "light": dict(page="#ffffff", card="#ffffff", border="#d0d7de", text="#1f2328", muted="#59636e",
-                  chip="#f6f8fa", accent="#0a66c2", green="#057642", ring="#ffffff"),
-    "dark": dict(page="#0d1117", card="#161b22", border="#30363d", text="#e6edf3", muted="#9198a1",
-                 chip="#21262d", accent="#4493f8", green="#3fb950", ring="#161b22"),
+    "light": dict(page="#ffffff", card="#ffffff", border="#e5e5ea", text="#1d1d1f", muted="#6e6e73",
+                  chip="#f5f5f7", accent="#0071e3", green="#248a3d", dot="#34c759", ring="#ffffff",
+                  road="#ececf0", lane="#ffffff", shadow=".08"),
+    "dark": dict(page="#0d1117", card="#1c1c1e", border="#38383a", text="#f5f5f7", muted="#a1a1a6",
+                 chip="#2c2c2e", accent="#2997ff", green="#30d158", dot="#30d158", ring="#1c1c1e",
+                 road="#2c2c2e", lane="#636366", shadow=".55"),
 }
-FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"
+FONT = ("-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',"
+        "Helvetica,Arial,sans-serif")
+# Per-project accent: (light, dark) versions of Apple system colours, chosen for readable text.
+ACCENTS = {
+    "blue": ("#0071e3", "#2997ff"), "indigo": ("#5856d6", "#7d7aff"), "red": ("#d70015", "#ff6961"),
+    "orange": ("#c93400", "#ff9f0a"), "green": ("#248a3d", "#30d158"), "purple": ("#8944ab", "#bf5af2"),
+}
+
+
+def accent_of(p: dict, theme: str) -> str:
+    light, dark = ACCENTS[p["accent"]]
+    return light if theme == "light" else dark
 
 
 def esc(s: str) -> str:
@@ -131,97 +144,97 @@ def text_width(s: str, size: float) -> float:
 def svg_open(w: int, h: int, title: str, t: dict) -> str:
     return f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{esc(title)}">
 <title>{esc(title)}</title>
+<defs>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="4" stdDeviation="9" flood-color="#000000" flood-opacity="{t['shadow']}"/>
+  </filter>
+  <filter id="soft" x="-10%" y="-10%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="{t['shadow']}"/>
+  </filter>
+</defs>
 <style>
   text {{ font-family: {FONT}; fill: {t['text']}; }}
   .muted {{ fill: {t['muted']}; }}
   .pulse {{ animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }}
   @keyframes pulse {{ 50% {{ opacity: .35; transform: scale(1.6); }} }}
-  .twinkle {{ animation: twinkle 4s ease-in-out infinite; }}
-  @keyframes twinkle {{ 50% {{ opacity: .15; }} }}
+  .drift {{ animation: drift 18s ease-in-out infinite alternate; }}
+  @keyframes drift {{ to {{ transform: translate(40px, 10px); }} }}
 </style>
 """
 
 
-def chip(x, y, label, t, size=13, fill=None, color=None, h=26) -> tuple[str, float]:
-    w = text_width(label, size) + 22
-    out = (f'<rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{h}" rx="{h / 2}" fill="{fill or t["chip"]}" '
-           f'stroke="{t["border"]}" stroke-width="1"/>'
-           f'<text x="{x + w / 2:.1f}" y="{y + h / 2 + size * 0.36:.1f}" font-size="{size}" text-anchor="middle"'
-           f'{f" style=" + chr(34) + "fill:" + color + chr(34) if color else ""}>{esc(label)}</text>')
+def card(w: int, h: int, t: dict, inset: int = 8, rx: int = 22) -> str:
+    """A rounded card with a soft shadow, inset so the shadow isn't clipped."""
+    return (f'<rect x="{inset}" y="{inset}" width="{w - 2 * inset}" height="{h - 2 * inset}" rx="{rx}" '
+            f'fill="{t["card"]}" stroke="{t["border"]}" stroke-width="1" filter="url(#shadow)"/>')
+
+
+def chip(x, y, label, t, size=13, fill=None, color=None, h=26, weight=500) -> tuple[str, float]:
+    w = text_width(label, size) + 24
+    style = f' style="fill:{color}"' if color else ""
+    out = (f'<rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{h}" rx="{h / 2}" fill="{fill or t["chip"]}"/>'
+           f'<text x="{x + w / 2:.1f}" y="{y + h / 2 + size * 0.36:.1f}" font-size="{size}" font-weight="{weight}" '
+           f'text-anchor="middle"{style}>{esc(label)}</text>')
     return out, w
 
 
 # ---------------------------------------------------------------------------
-# Header: LinkedIn-style profile card
+# Header: LinkedIn-style arrangement, Apple-style finish
 # ---------------------------------------------------------------------------
 def header(t: dict, theme: str) -> str:
-    w, h = 1000, 440
-    rng = random.Random(7)
+    w, h = 1000, 450
+    inset = 8
     s = [svg_open(w, h, f"{PROFILE['name']}: {PROFILE['headline']}. {PROFILE['subline']}.", t)]
+    base = ("#f5f5f7", "#ffffff") if theme == "light" else ("#000000", "#111113")
+    glow = .42 if theme == "light" else .55
     s.append(f"""<defs>
   <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0a3d7a"/><stop offset=".55" stop-color="#0a66c2"/><stop offset="1" stop-color="#0f766e"/>
+    <stop offset="0" stop-color="{base[0]}"/><stop offset="1" stop-color="{base[1]}"/>
   </linearGradient>
-  <clipPath id="card"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="16"/></clipPath>
-  <clipPath id="photo"><circle cx="128" cy="160" r="84"/></clipPath>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="38"/></filter>
+  <clipPath id="cover-clip"><path d="M {inset} {inset + 22} a 22 22 0 0 1 22 -22 H {w - inset - 22} a 22 22 0 0 1 22 22 V 158 H {inset} Z"/></clipPath>
+  <clipPath id="photo"><circle cx="136" cy="166" r="80"/></clipPath>
 </defs>""")
-    s.append(f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="16" fill="{t["card"]}" stroke="{t["border"]}"/>')
-    # cover banner with a faint neural-network pattern
-    s.append('<g clip-path="url(#card)">')
-    s.append(f'<rect x="0" y="0" width="{w}" height="150" fill="url(#cover)"/>')
-    nodes = [(rng.uniform(260, 990), rng.uniform(12, 140)) for _ in range(26)]
-    for i, (x1, y1) in enumerate(nodes):
-        for x2, y2 in nodes[i + 1:]:
-            if (x1 - x2) ** 2 + (y1 - y2) ** 2 < 120 ** 2:
-                s.append(f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" stroke="#ffffff" stroke-opacity=".16"/>')
-    for i, (x, y) in enumerate(nodes):
-        s.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{rng.uniform(2, 3.6):.1f}" fill="#ffffff" fill-opacity=".55" '
-                 f'class="twinkle" style="animation-delay:{(i % 7) * .55:.2f}s"/>')
-    s.append('</g>')
-    # photo with a LinkedIn-style "open to work" frame
+    s.append(card(w, h, t, inset))
+    # cover: soft colour glows on a neutral base, drifting slowly
+    s.append('<g clip-path="url(#cover-clip)">')
+    s.append(f'<rect x="0" y="0" width="{w}" height="160" fill="url(#cover)"/>')
+    s.append(f'<g filter="url(#blur)" opacity="{glow}" class="drift">')
+    for cx, cy, r, col in ((320, 40, 120, "#0071e3"), (520, 120, 110, "#af52de"), (720, 30, 120, "#ff375f"),
+                           (900, 130, 110, "#ff9f0a"), (130, 150, 90, "#30b0c7")):
+        s.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{col}"/>')
+    s.append('</g></g>')
+    s.append(f'<line x1="{inset}" y1="158" x2="{w - inset}" y2="158" stroke="{t["border"]}"/>')
+    # photo
     photo = ASSETS / "photo.jpg"
-    cx, cy = 128, 160
-
-    def pt(r, deg):
-        a = math.radians(deg)
-        return cx + r * math.cos(a), cy + r * math.sin(a)
-
-    s.append(f'<circle cx="{cx}" cy="{cy}" r="93" fill="{t["ring"]}"/>')
+    s.append(f'<circle cx="136" cy="166" r="87" fill="{t["ring"]}" filter="url(#soft)"/>')
     if photo.exists():
         data = base64.b64encode(photo.read_bytes()).decode()
-        s.append(f'<image x="{cx - 84}" y="{cy - 84}" width="168" height="168" clip-path="url(#photo)" '
+        s.append(f'<image x="56" y="86" width="160" height="160" clip-path="url(#photo)" '
                  f'preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{data}"/>')
     else:
-        s.append(f'<circle cx="{cx}" cy="{cy}" r="84" fill="{t["chip"]}"/>')
-    s.append(f'<circle cx="{cx}" cy="{cy}" r="85" fill="none" stroke="{t["green"]}" stroke-width="5"/>')
-    (bx1, by1), (bx2, by2) = pt(84, 152), pt(84, 28)
-    s.append(f'<path d="M {bx1:.1f} {by1:.1f} A 84 84 0 0 0 {bx2:.1f} {by2:.1f}" fill="none" '
-             f'stroke="{t["green"]}" stroke-width="17"/>')
-    (tx1, ty1), (tx2, ty2) = pt(88.5, 152), pt(88.5, 28)
-    s.append(f'<path id="arc-{theme}" d="M {tx1:.1f} {ty1:.1f} A 88.5 88.5 0 0 0 {tx2:.1f} {ty2:.1f}" fill="none"/>')
-    s.append(f'<text font-size="11.5" font-weight="700" letter-spacing="1.4" style="fill:#ffffff">'
-             f'<textPath href="#arc-{theme}" xlink:href="#arc-{theme}" startOffset="50%" text-anchor="middle">#OPENTOWORK</textPath></text>')
+        s.append(f'<circle cx="136" cy="166" r="80" fill="{t["chip"]}"/>')
     # name block
-    s.append(f'<text x="236" y="196" font-size="34" font-weight="700">{esc(PROFILE["name"])}</text>')
-    s.append(f'<text x="236" y="228" font-size="19">{esc(PROFILE["headline"])}</text>')
-    s.append(f'<text x="236" y="254" font-size="15" class="muted">{esc(PROFILE["subline"])}</text>')
-    s.append(f'<circle cx="242" cy="277" r="4.5" fill="{t["green"]}" class="pulse"/>')
-    # s.append(f'<text x="254" y="282" font-size="14" font-weight="600" style="fill:{t["green"]}">{esc(PROFILE["open_to"])}</text>')
-    # s.append(f'<text x="{254 + text_width(PROFILE["open_to"], 14) + 14:.0f}" y="282" font-size="14" class="muted">· {esc(PROFILE["where"])}</text>')
-    # theme chips on the right
+    s.append(f'<text x="248" y="206" font-size="36" font-weight="700" letter-spacing="-0.6">{esc(PROFILE["name"])}</text>')
+    s.append(f'<text x="248" y="238" font-size="20" font-weight="500" letter-spacing="-0.2">{esc(PROFILE["headline"])}</text>')
+    s.append(f'<text x="248" y="264" font-size="15" class="muted">{esc(PROFILE["subline"])}</text>')
+    s.append(f'<circle cx="253" cy="288" r="4.5" fill="{t["dot"]}" class="pulse"/>')
+    s.append(f'<text x="265" y="293" font-size="14" font-weight="600">{esc(PROFILE["open_to"])}</text>')
+    s.append(f'<text x="{265 + text_width(PROFILE["open_to"], 14) + 12:.0f}" y="293" font-size="14" class="muted">· {esc(PROFILE["where"])}</text>')
+    # focus areas, right-aligned pills
     for i, th in enumerate(PROFILE["themes"]):
-        cw = text_width(th, 13) + 22
-        c, _ = chip(w - 32 - cw, 172 + i * 36, th, t, fill=t["card"], color=t["accent"])
+        cw = text_width(th, 13) + 24
+        c, _ = chip(w - 36 - cw, 180 + i * 36, th, t)
         s.append(c)
     # stats row
-    s.append(f'<line x1="32" y1="316" x2="{w - 32}" y2="316" stroke="{t["border"]}"/>')
-    col = (w - 64) / 4
+    s.append(f'<line x1="36" y1="326" x2="{w - 36}" y2="326" stroke="{t["border"]}"/>')
+    col = (w - 72) / 4
     for i, (big, small) in enumerate(PROFILE["stats"]):
-        x = 32 + i * col
+        x = 36 + i * col
         if i:
-            s.append(f'<line x1="{x:.0f}" y1="338" x2="{x:.0f}" y2="414" stroke="{t["border"]}"/>')
-        s.append(f'<text x="{x + col / 2:.0f}" y="378" font-size="32" font-weight="700" text-anchor="middle" style="fill:{t["accent"]}">{esc(big)}</text>')
-        s.append(f'<text x="{x + col / 2:.0f}" y="402" font-size="14" text-anchor="middle" class="muted">{esc(small)}</text>')
+            s.append(f'<line x1="{x:.0f}" y1="348" x2="{x:.0f}" y2="416" stroke="{t["border"]}"/>')
+        s.append(f'<text x="{x + col / 2:.0f}" y="386" font-size="34" font-weight="700" letter-spacing="-0.8" text-anchor="middle">{esc(big)}</text>')
+        s.append(f'<text x="{x + col / 2:.0f}" y="410" font-size="13.5" text-anchor="middle" class="muted">{esc(small)}</text>')
     s.append("</svg>\n")
     return "\n".join(s)
 
@@ -230,25 +243,20 @@ def header(t: dict, theme: str) -> str:
 # Project card
 # ---------------------------------------------------------------------------
 def tile(p: dict, t: dict, theme: str) -> str:
-    w, h = 480, 214
+    w, h = 480, 224
+    acc = accent_of(p, theme)
     s = [svg_open(w, h, f"{p['title']}: {p['line1']} {p['line2']}", t)]
-    cid = f"clip-{p['slug']}-{theme}"
-    s.append(f'<defs><clipPath id="{cid}"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12"/></clipPath></defs>')
-    s.append(f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12" fill="{t["card"]}" stroke="{t["border"]}"/>')
-    s.append(f'<rect x="0" y="0" width="{w}" height="5" fill="{p["accent"]}" clip-path="url(#{cid})"/>')
-    kind_w = text_width(p["kind"].upper(), 11) + 20
-    s.append(f'<rect x="24" y="26" width="{kind_w:.0f}" height="22" rx="11" fill="{p["accent"]}" fill-opacity=".12"/>')
-    s.append(f'<text x="{24 + kind_w / 2:.0f}" y="41" font-size="11" font-weight="700" letter-spacing=".8" text-anchor="middle" '
-             f'style="fill:{p["accent"] if theme == "light" else t["text"]}">{p["kind"].upper()}</text>')
-    s.append(f'<text x="24" y="86" font-size="24" font-weight="700">{esc(p["title"])}</text>')
-    s.append(f'<text x="24" y="116" font-size="15" class="muted">{esc(p["line1"])}</text>')
-    s.append(f'<text x="24" y="137" font-size="15" class="muted">{esc(p["line2"])}</text>')
-    x = 24
+    s.append(card(w, h, t))
+    s.append(f'<text x="34" y="50" font-size="12" font-weight="600" letter-spacing="0.6" style="fill:{acc}">{esc(p["kind"].upper())}</text>')
+    s.append(f'<text x="34" y="88" font-size="26" font-weight="700" letter-spacing="-0.5">{esc(p["title"])}</text>')
+    s.append(f'<text x="34" y="118" font-size="15" class="muted">{esc(p["line1"])}</text>')
+    s.append(f'<text x="34" y="139" font-size="15" class="muted">{esc(p["line2"])}</text>')
+    x = 34
     for st in p["stack"]:
-        c, cw = chip(x, 162, st, t, size=12, h=24)
+        c, cw = chip(x, 162, st, t, size=12, h=26)
         s.append(c)
         x += cw + 8
-    s.append(f'<text x="{w - 24}" y="179" font-size="14" font-weight="600" text-anchor="end" style="fill:{t["accent"]}">View →</text>')
+    s.append(f'<text x="{w - 34}" y="180" font-size="14" font-weight="500" text-anchor="end" style="fill:{t["accent"]}">Learn more ›</text>')
     s.append("</svg>\n")
     return "\n".join(s)
 
@@ -262,8 +270,7 @@ def journey(t: dict, theme: str) -> str:
     left, right, r = 110, 890, 95
     starts = [(50, 1), (right, -1), (left, 1)]      # (x where the row starts, direction)
     ends = [right, left, 955]
-    road = "#e6eaef" if theme == "light" else "#262c36"
-    dash = "#ffffff" if theme == "light" else "#8b949e"
+    road, dash = t["road"], t["lane"]
     d = (f"M 50 {rows_y[0]} H {right} A {r} {r} 0 0 1 {right} {rows_y[1]} "
          f"H {left} A {r} {r} 0 0 0 {left} {rows_y[2]} H 955")
     alt = "Career road: " + "; ".join(f"{y} {role}, {place} ({', '.join(n for n, _ in tech)})"
@@ -273,8 +280,7 @@ def journey(t: dict, theme: str) -> str:
   .lane {{ animation: drive 1.6s linear infinite; }}
   @keyframes drive {{ to {{ stroke-dashoffset: -22; }} }}
 </style>""")
-    s.append(f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12" fill="{t["card"]}" stroke="{t["border"]}"/>')
-    s.append(f'<path d="{d}" fill="none" stroke="{t["border"]}" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>')
+    s.append(card(w, h, t))
     s.append(f'<path id="road-{theme}" d="{d}" fill="none" stroke="{road}" stroke-width="40" stroke-linecap="round"/>')
     s.append(f'<path d="{d}" fill="none" stroke="{dash}" stroke-opacity=".9" stroke-width="2" stroke-dasharray="12 10" class="lane"/>')
     # a traveller moving along the road
@@ -297,7 +303,7 @@ def journey(t: dict, theme: str) -> str:
                 cx0 = x if direction > 0 else x - cw
                 if (direction > 0 and cx0 + cw > seg_end - 8) or (direction < 0 and cx0 < seg_end + 8):
                     print(f"warning: no room for {name!r} after {year}; adjust row_fracs"); break
-                s.append(f'<rect x="{cx0:.1f}" y="{y - 11}" width="{cw:.1f}" height="22" rx="11" fill="{t["card"]}" stroke="{t["border"]}"/>')
+                s.append(f'<rect x="{cx0:.1f}" y="{y - 11}" width="{cw:.1f}" height="22" rx="11" fill="{t["card"]}" filter="url(#soft)"/>')
                 s.append(f'<circle cx="{cx0 + 12:.1f}" cy="{y}" r="4" fill="{TECH_COLORS[cat]}"/>')
                 s.append(f'<text x="{cx0 + 21:.1f}" y="{y + 4}" font-size="11.5" font-weight="600">{esc(name)}</text>')
                 x += direction * (cw + 8)
@@ -312,7 +318,7 @@ def journey(t: dict, theme: str) -> str:
     # finish flag
     fx, fy = 955, rows_y[2]
     s.append(f'<line x1="{fx}" y1="{fy - 4}" x2="{fx}" y2="{fy - 44}" stroke="{t["text"]}" stroke-width="2"/>')
-    s.append(f'<path d="M {fx} {fy - 44} L {fx + 26} {fy - 37} L {fx} {fy - 30} Z" fill="{t["green"]}"/>')
+    s.append(f'<path d="M {fx} {fy - 44} L {fx + 26} {fy - 37} L {fx} {fy - 30} Z" fill="{t["dot"]}"/>')
     # legend
     lx = 28
     for cat, label in TECH_LABELS.items():
@@ -374,24 +380,24 @@ def activity(t: dict, theme: str, data: dict) -> str:
     stats = [(str(data["total"]), "contributions in the last year"), (str(active), "active days"),
              (f"{longest} days", "longest streak"), (f"{ch_active} / {len(in_ch)}", "challenge days with commits")]
 
-    levels = (["#ebedf0", "#c7ddf5", "#7fb0e8", "#3d86d6", "#0a66c2"] if theme == "light"
-              else ["#21262d", "#103a6b", "#1a5aa6", "#2f7fd8", "#58a6ff"])
+    levels = (["#f0f0f5", "#cce4ff", "#80bdff", "#3395ff", "#0071e3"] if theme == "light"
+              else ["#2c2c2e", "#0a3a73", "#0058b9", "#0a84ff", "#64b5ff"])
 
     def level(n):
         return 0 if n == 0 else 1 if n == 1 else 2 if n <= 3 else 3 if n <= 7 else 4
 
-    w, h = 1000, 300
+    w, h = 1000, 318
     alt = (f"GitHub activity: {data['total']} contributions in the last year, {active} active days, "
            f"longest streak {longest} days, commits on {ch_active} of {len(in_ch)} days of the {label} challenge.")
     s = [svg_open(w, h, alt, t)]
-    s.append(f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12" fill="{t["card"]}" stroke="{t["border"]}"/>')
+    s.append(card(w, h, t))
     col = (w - 64) / 4
     for i, (big, small) in enumerate(stats):
         x = 32 + i * col
         if i:
             s.append(f'<line x1="{x:.0f}" y1="26" x2="{x:.0f}" y2="84" stroke="{t["border"]}"/>')
-        color = t["green"] if i == 3 else t["accent"]
-        s.append(f'<text x="{x + col / 2:.0f}" y="60" font-size="28" font-weight="700" text-anchor="middle" style="fill:{color}">{esc(big)}</text>')
+        color = t["green"] if i == 3 else t["text"]
+        s.append(f'<text x="{x + col / 2:.0f}" y="60" font-size="30" font-weight="700" letter-spacing="-0.6" text-anchor="middle" style="fill:{color}">{esc(big)}</text>')
         s.append(f'<text x="{x + col / 2:.0f}" y="82" font-size="13" text-anchor="middle" class="muted">{esc(small)}</text>')
 
     # heatmap: columns are weeks (Sunday first), rows are weekdays
@@ -425,7 +431,7 @@ def activity(t: dict, theme: str, data: dict) -> str:
         bx1 = gx + min(ch_cols) * (cell + gap) - 4
         bx2 = gx + max(ch_cols) * (cell + gap) + cell + 4
         s.append(f'<rect x="{bx1}" y="{gy - 4}" width="{bx2 - bx1}" height="{7 * (cell + gap) + 5}" rx="6" fill="none" '
-                 f'stroke="{t["green"]}" stroke-width="2" stroke-dasharray="5 4" class="lane"/>')
+                 f'stroke="{t["dot"]}" stroke-width="2" stroke-dasharray="5 4" class="lane"/>')
         s.append(f'<text x="{bx2}" y="{gy - 26}" font-size="12" font-weight="700" text-anchor="end" style="fill:{t["green"]}">{esc(label)} ↓</text>')
     s.append(f"""<style>.lane {{ animation: march 1.4s linear infinite; }} @keyframes march {{ to {{ stroke-dashoffset: -18; }} }}</style>""")
     # legend + freshness
@@ -444,14 +450,14 @@ def activity(t: dict, theme: str, data: dict) -> str:
 # Toolbox
 # ---------------------------------------------------------------------------
 def toolbox(t: dict) -> str:
-    w, h = 1000, 176
+    w, h = 1000, 180
     alt = "Toolbox: " + "; ".join(g + ": " + ", ".join(items) for g, items in TOOLBOX)
     s = [svg_open(w, h, alt, t)]
-    s.append(f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12" fill="{t["card"]}" stroke="{t["border"]}"/>')
+    s.append(card(w, h, t))
     for r, (group, items) in enumerate(TOOLBOX):
         y = 28 + r * 46
-        s.append(f'<text x="28" y="{y + 19}" font-size="14" font-weight="700" class="muted">{esc(group.upper())}</text>')
-        x = 150
+        s.append(f'<text x="40" y="{y + 19}" font-size="12.5" font-weight="600" letter-spacing="0.6" class="muted">{esc(group.upper())}</text>')
+        x = 160
         for it in items:
             c, cw = chip(x, y, it, t, size=14, h=28)
             s.append(c)

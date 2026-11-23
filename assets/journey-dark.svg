@@ -1,143 +1,150 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 600" width="1000" height="600" role="img" aria-label="Career road: 2012 B.E. Computer Engineering, University of Mumbai (C, C++); 2013 Co-founder &amp; tech lead, HelloWelt · 3D-print marketplace (PHP, WordPress, MySQL); 2014 Software trainer, Aptech (C#, Python); 2015 M.Sc. Computer Science, University of Zurich (Raspberry Pi, OpenCV); 2016 SAP UI5 developer, Accenture (SAP Fiori, Node-RED); 2018 Blockchain developer, Equidato (Node.js, Ethereum); 2019 Research &amp; teaching assistant, University of St.Gallen (SPARQL, Scene graphs, LLMs + RAG); 2025 PhD, Computer Science, University of St.Gallen (MCP, Vertex AI); 2026 30 Ideas · 30 Days, 29 AI prototypes (Swift, Go, TypeScript)">
 <title>Career road: 2012 B.E. Computer Engineering, University of Mumbai (C, C++); 2013 Co-founder &amp; tech lead, HelloWelt · 3D-print marketplace (PHP, WordPress, MySQL); 2014 Software trainer, Aptech (C#, Python); 2015 M.Sc. Computer Science, University of Zurich (Raspberry Pi, OpenCV); 2016 SAP UI5 developer, Accenture (SAP Fiori, Node-RED); 2018 Blockchain developer, Equidato (Node.js, Ethereum); 2019 Research &amp; teaching assistant, University of St.Gallen (SPARQL, Scene graphs, LLMs + RAG); 2025 PhD, Computer Science, University of St.Gallen (MCP, Vertex AI); 2026 30 Ideas · 30 Days, 29 AI prototypes (Swift, Go, TypeScript)</title>
+<defs>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="4" stdDeviation="9" flood-color="#000000" flood-opacity=".55"/>
+  </filter>
+  <filter id="soft" x="-10%" y="-10%" width="120%" height="140%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity=".55"/>
+  </filter>
+</defs>
 <style>
-  text { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif; fill: #e6edf3; }
-  .muted { fill: #9198a1; }
+  text { font-family: -apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif; fill: #f5f5f7; }
+  .muted { fill: #a1a1a6; }
   .pulse { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
   @keyframes pulse { 50% { opacity: .35; transform: scale(1.6); } }
-  .twinkle { animation: twinkle 4s ease-in-out infinite; }
-  @keyframes twinkle { 50% { opacity: .15; } }
+  .drift { animation: drift 18s ease-in-out infinite alternate; }
+  @keyframes drift { to { transform: translate(40px, 10px); } }
 </style>
 
 <style>
   .lane { animation: drive 1.6s linear infinite; }
   @keyframes drive { to { stroke-dashoffset: -22; } }
 </style>
-<rect x="1" y="1" width="998" height="598" rx="12" fill="#161b22" stroke="#30363d"/>
-<path d="M 50 140 H 890 A 95 95 0 0 1 890 330 H 110 A 95 95 0 0 0 110 520 H 955" fill="none" stroke="#30363d" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="road-dark" d="M 50 140 H 890 A 95 95 0 0 1 890 330 H 110 A 95 95 0 0 0 110 520 H 955" fill="none" stroke="#262c36" stroke-width="40" stroke-linecap="round"/>
-<path d="M 50 140 H 890 A 95 95 0 0 1 890 330 H 110 A 95 95 0 0 0 110 520 H 955" fill="none" stroke="#8b949e" stroke-opacity=".9" stroke-width="2" stroke-dasharray="12 10" class="lane"/>
-<circle r="6" fill="#4493f8" stroke="#161b22" stroke-width="2"><animateMotion dur="26s" repeatCount="indefinite" rotate="auto"><mpath href="#road-dark" xlink:href="#road-dark"/></animateMotion></circle>
-<rect x="101.2" y="129" width="37.1" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="113.2" cy="140" r="4" fill="#0a66c2"/>
+<rect x="8" y="8" width="984" height="584" rx="22" fill="#1c1c1e" stroke="#38383a" stroke-width="1" filter="url(#shadow)"/>
+<path id="road-dark" d="M 50 140 H 890 A 95 95 0 0 1 890 330 H 110 A 95 95 0 0 0 110 520 H 955" fill="none" stroke="#2c2c2e" stroke-width="40" stroke-linecap="round"/>
+<path d="M 50 140 H 890 A 95 95 0 0 1 890 330 H 110 A 95 95 0 0 0 110 520 H 955" fill="none" stroke="#636366" stroke-opacity=".9" stroke-width="2" stroke-dasharray="12 10" class="lane"/>
+<circle r="6" fill="#2997ff" stroke="#1c1c1e" stroke-width="2"><animateMotion dur="26s" repeatCount="indefinite" rotate="auto"><mpath href="#road-dark" xlink:href="#road-dark"/></animateMotion></circle>
+<rect x="101.2" y="129" width="37.1" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="113.2" cy="140" r="4" fill="#0071e3"/>
 <text x="122.2" y="144" font-size="11.5" font-weight="600">C</text>
-<rect x="146.3" y="129" width="49.3" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="158.3" cy="140" r="4" fill="#0a66c2"/>
+<rect x="146.3" y="129" width="49.3" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="158.3" cy="140" r="4" fill="#0071e3"/>
 <text x="167.3" y="144" font-size="11.5" font-weight="600">C++</text>
-<circle cx="75.2" cy="140" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="75.2" y1="116" x2="75.2" y2="64" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="83.2" y="76" font-size="15" font-weight="800" text-anchor="start" style="fill:#4493f8">2012</text>
+<circle cx="75.2" cy="140" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="75.2" y1="116" x2="75.2" y2="64" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="83.2" y="76" font-size="15" font-weight="800" text-anchor="start" style="fill:#2997ff">2012</text>
 <text x="83.2" y="94" font-size="13.5" font-weight="600" text-anchor="start">B.E. Computer Engineering</text>
 <text x="83.2" y="111" font-size="12" text-anchor="start" class="muted">University of Mumbai</text>
-<rect x="386.8" y="129" width="51.4" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="398.8" cy="140" r="4" fill="#c2410c"/>
+<rect x="386.8" y="129" width="51.4" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="398.8" cy="140" r="4" fill="#ff375f"/>
 <text x="407.8" y="144" font-size="11.5" font-weight="600">PHP</text>
-<rect x="446.2" y="129" width="86.9" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="458.2" cy="140" r="4" fill="#c2410c"/>
+<rect x="446.2" y="129" width="86.9" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="458.2" cy="140" r="4" fill="#ff375f"/>
 <text x="467.2" y="144" font-size="11.5" font-weight="600">WordPress</text>
-<rect x="541.1" y="129" width="64.6" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="553.1" cy="140" r="4" fill="#0f766e"/>
+<rect x="541.1" y="129" width="64.6" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="553.1" cy="140" r="4" fill="#30b0c7"/>
 <text x="562.1" y="144" font-size="11.5" font-weight="600">MySQL</text>
-<circle cx="360.8" cy="140" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="360.8" y1="116" x2="360.8" y2="64" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="368.8" y="76" font-size="15" font-weight="800" text-anchor="start" style="fill:#4493f8">2013</text>
+<circle cx="360.8" cy="140" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="360.8" y1="116" x2="360.8" y2="64" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="368.8" y="76" font-size="15" font-weight="800" text-anchor="start" style="fill:#2997ff">2013</text>
 <text x="368.8" y="94" font-size="13.5" font-weight="600" text-anchor="start">Co-founder &amp; tech lead</text>
 <text x="368.8" y="111" font-size="12" text-anchor="start" class="muted">HelloWelt · 3D-print marketplace</text>
-<rect x="664.0" y="129" width="43.2" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="676.0" cy="140" r="4" fill="#0a66c2"/>
+<rect x="664.0" y="129" width="43.2" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="676.0" cy="140" r="4" fill="#0071e3"/>
 <text x="685.0" y="144" font-size="11.5" font-weight="600">C#</text>
-<rect x="715.2" y="129" width="67.6" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="727.2" cy="140" r="4" fill="#0a66c2"/>
+<rect x="715.2" y="129" width="67.6" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="727.2" cy="140" r="4" fill="#0071e3"/>
 <text x="736.2" y="144" font-size="11.5" font-weight="600">Python</text>
-<circle cx="638.0" cy="140" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="638.0" y1="116" x2="638.0" y2="64" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="646.0" y="76" font-size="15" font-weight="800" text-anchor="start" style="fill:#4493f8">2014</text>
+<circle cx="638.0" cy="140" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="638.0" y1="116" x2="638.0" y2="64" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="646.0" y="76" font-size="15" font-weight="800" text-anchor="start" style="fill:#2997ff">2014</text>
 <text x="646.0" y="94" font-size="13.5" font-weight="600" text-anchor="start">Software trainer</text>
 <text x="646.0" y="111" font-size="12" text-anchor="start" class="muted">Aptech</text>
-<rect x="740.0" y="319" width="100.6" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="752.0" cy="330" r="4" fill="#b45309"/>
+<rect x="740.0" y="319" width="100.6" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="752.0" cy="330" r="4" fill="#ff9f0a"/>
 <text x="761.0" y="334" font-size="11.5" font-weight="600">Raspberry Pi</text>
-<rect x="662.3" y="319" width="69.7" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="674.3" cy="330" r="4" fill="#7c3aed"/>
+<rect x="662.3" y="319" width="69.7" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="674.3" cy="330" r="4" fill="#af52de"/>
 <text x="683.3" y="334" font-size="11.5" font-weight="600">OpenCV</text>
-<circle cx="866.6" cy="330" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="866.6" y1="306" x2="866.6" y2="254" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="858.6" y="266" font-size="15" font-weight="800" text-anchor="end" style="fill:#4493f8">2015</text>
+<circle cx="866.6" cy="330" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="866.6" y1="306" x2="866.6" y2="254" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="858.6" y="266" font-size="15" font-weight="800" text-anchor="end" style="fill:#2997ff">2015</text>
 <text x="858.6" y="284" font-size="13.5" font-weight="600" text-anchor="end">M.Sc. Computer Science</text>
 <text x="858.6" y="301" font-size="12" text-anchor="end" class="muted">University of Zurich</text>
-<rect x="493.3" y="319" width="82.1" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="505.3" cy="330" r="4" fill="#c2410c"/>
+<rect x="493.3" y="319" width="82.1" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="505.3" cy="330" r="4" fill="#ff375f"/>
 <text x="514.3" y="334" font-size="11.5" font-weight="600">SAP Fiori</text>
-<rect x="402.4" y="319" width="82.9" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="414.4" cy="330" r="4" fill="#b45309"/>
+<rect x="402.4" y="319" width="82.9" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="414.4" cy="330" r="4" fill="#ff9f0a"/>
 <text x="423.4" y="334" font-size="11.5" font-weight="600">Node-RED</text>
-<circle cx="601.4" cy="330" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="601.4" y1="306" x2="601.4" y2="254" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="593.4" y="266" font-size="15" font-weight="800" text-anchor="end" style="fill:#4493f8">2016</text>
+<circle cx="601.4" cy="330" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="601.4" y1="306" x2="601.4" y2="254" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="593.4" y="266" font-size="15" font-weight="800" text-anchor="end" style="fill:#2997ff">2016</text>
 <text x="593.4" y="284" font-size="13.5" font-weight="600" text-anchor="end">SAP UI5 developer</text>
 <text x="593.4" y="301" font-size="12" text-anchor="end" class="muted">Accenture</text>
-<rect x="246.6" y="319" width="71.4" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="258.6" cy="330" r="4" fill="#c2410c"/>
+<rect x="246.6" y="319" width="71.4" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="258.6" cy="330" r="4" fill="#ff375f"/>
 <text x="267.6" y="334" font-size="11.5" font-weight="600">Node.js</text>
-<rect x="158.8" y="319" width="79.8" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="170.8" cy="330" r="4" fill="#0f766e"/>
+<rect x="158.8" y="319" width="79.8" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="170.8" cy="330" r="4" fill="#30b0c7"/>
 <text x="179.8" y="334" font-size="11.5" font-weight="600">Ethereum</text>
-<circle cx="344.0" cy="330" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="344.0" y1="306" x2="344.0" y2="254" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="336.0" y="266" font-size="15" font-weight="800" text-anchor="end" style="fill:#4493f8">2018</text>
+<circle cx="344.0" cy="330" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="344.0" y1="306" x2="344.0" y2="254" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="336.0" y="266" font-size="15" font-weight="800" text-anchor="end" style="fill:#2997ff">2018</text>
 <text x="336.0" y="284" font-size="13.5" font-weight="600" text-anchor="end">Blockchain developer</text>
 <text x="336.0" y="301" font-size="12" text-anchor="end" class="muted">Equidato</text>
-<rect x="161.3" y="509" width="72.8" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="173.3" cy="520" r="4" fill="#0f766e"/>
+<rect x="161.3" y="509" width="72.8" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="173.3" cy="520" r="4" fill="#30b0c7"/>
 <text x="182.3" y="524" font-size="11.5" font-weight="600">SPARQL</text>
-<rect x="242.1" y="509" width="101.9" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="254.1" cy="520" r="4" fill="#7c3aed"/>
+<rect x="242.1" y="509" width="101.9" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="254.1" cy="520" r="4" fill="#af52de"/>
 <text x="263.1" y="524" font-size="11.5" font-weight="600">Scene graphs</text>
-<rect x="352.0" y="509" width="92.6" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="364.0" cy="520" r="4" fill="#7c3aed"/>
+<rect x="352.0" y="509" width="92.6" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="364.0" cy="520" r="4" fill="#af52de"/>
 <text x="373.0" y="524" font-size="11.5" font-weight="600">LLMs + RAG</text>
-<circle cx="135.3" cy="520" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="135.3" y1="496" x2="135.3" y2="444" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="143.3" y="456" font-size="15" font-weight="800" text-anchor="start" style="fill:#4493f8">2019</text>
+<circle cx="135.3" cy="520" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="135.3" y1="496" x2="135.3" y2="444" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="143.3" y="456" font-size="15" font-weight="800" text-anchor="start" style="fill:#2997ff">2019</text>
 <text x="143.3" y="474" font-size="13.5" font-weight="600" text-anchor="start">Research &amp; teaching assistant</text>
 <text x="143.3" y="491" font-size="12" text-anchor="start" class="muted">University of St.Gallen</text>
-<rect x="499.4" y="509" width="51.4" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="511.4" cy="520" r="4" fill="#7c3aed"/>
+<rect x="499.4" y="509" width="51.4" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="511.4" cy="520" r="4" fill="#af52de"/>
 <text x="520.4" y="524" font-size="11.5" font-weight="600">MCP</text>
-<rect x="558.7" y="509" width="85.7" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="570.7" cy="520" r="4" fill="#7c3aed"/>
+<rect x="558.7" y="509" width="85.7" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="570.7" cy="520" r="4" fill="#af52de"/>
 <text x="579.7" y="524" font-size="11.5" font-weight="600">Vertex AI</text>
-<circle cx="473.4" cy="520" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="473.4" y1="496" x2="473.4" y2="444" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="481.4" y="456" font-size="15" font-weight="800" text-anchor="start" style="fill:#4493f8">2025</text>
+<circle cx="473.4" cy="520" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="473.4" y1="496" x2="473.4" y2="444" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="481.4" y="456" font-size="15" font-weight="800" text-anchor="start" style="fill:#2997ff">2025</text>
 <text x="481.4" y="474" font-size="13.5" font-weight="600" text-anchor="start">PhD, Computer Science</text>
 <text x="481.4" y="491" font-size="12" text-anchor="start" class="muted">University of St.Gallen</text>
-<rect x="710.6" y="509" width="59.2" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="722.6" cy="520" r="4" fill="#db2777"/>
+<rect x="710.6" y="509" width="59.2" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="722.6" cy="520" r="4" fill="#34c759"/>
 <text x="731.6" y="524" font-size="11.5" font-weight="600">Swift</text>
-<rect x="777.8" y="509" width="43.2" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="789.8" cy="520" r="4" fill="#0a66c2"/>
+<rect x="777.8" y="509" width="43.2" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="789.8" cy="520" r="4" fill="#0071e3"/>
 <text x="798.8" y="524" font-size="11.5" font-weight="600">Go</text>
-<rect x="829.0" y="509" width="90.7" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<circle cx="841.0" cy="520" r="4" fill="#c2410c"/>
+<rect x="829.0" y="509" width="90.7" height="22" rx="11" fill="#1c1c1e" filter="url(#soft)"/>
+<circle cx="841.0" cy="520" r="4" fill="#ff375f"/>
 <text x="850.0" y="524" font-size="11.5" font-weight="600">TypeScript</text>
-<circle cx="684.6" cy="520" r="10" fill="#161b22" stroke="#4493f8" stroke-width="3.5"/>
-<line x1="684.6" y1="496" x2="684.6" y2="444" stroke="#4493f8" stroke-width="2" stroke-opacity=".5"/>
-<text x="692.6" y="456" font-size="15" font-weight="800" text-anchor="start" style="fill:#4493f8">2026</text>
+<circle cx="684.6" cy="520" r="10" fill="#1c1c1e" stroke="#2997ff" stroke-width="3.5"/>
+<line x1="684.6" y1="496" x2="684.6" y2="444" stroke="#2997ff" stroke-width="2" stroke-opacity=".5"/>
+<text x="692.6" y="456" font-size="15" font-weight="800" text-anchor="start" style="fill:#2997ff">2026</text>
 <text x="692.6" y="474" font-size="13.5" font-weight="600" text-anchor="start">30 Ideas · 30 Days</text>
 <text x="692.6" y="491" font-size="12" text-anchor="start" class="muted">29 AI prototypes</text>
-<line x1="955" y1="516" x2="955" y2="476" stroke="#e6edf3" stroke-width="2"/>
-<path d="M 955 476 L 981 483 L 955 490 Z" fill="#3fb950"/>
-<circle cx="33" cy="578" r="4.5" fill="#0a66c2"/>
+<line x1="955" y1="516" x2="955" y2="476" stroke="#f5f5f7" stroke-width="2"/>
+<path d="M 955 476 L 981 483 L 955 490 Z" fill="#30d158"/>
+<circle cx="33" cy="578" r="4.5" fill="#0071e3"/>
 <text x="43" y="582" font-size="12" class="muted">Languages</text>
-<circle cx="131.32000000000002" cy="578" r="4.5" fill="#c2410c"/>
+<circle cx="131.32000000000002" cy="578" r="4.5" fill="#ff375f"/>
 <text x="141.32000000000002" y="582" font-size="12" class="muted">Web</text>
-<circle cx="191.48000000000002" cy="578" r="4.5" fill="#0f766e"/>
+<circle cx="191.48000000000002" cy="578" r="4.5" fill="#30b0c7"/>
 <text x="201.48000000000002" y="582" font-size="12" class="muted">Data &amp; ledgers</text>
-<circle cx="314.40000000000003" cy="578" r="4.5" fill="#b45309"/>
+<circle cx="314.40000000000003" cy="578" r="4.5" fill="#ff9f0a"/>
 <text x="324.40000000000003" y="582" font-size="12" class="muted">IoT</text>
-<circle cx="375.64000000000004" cy="578" r="4.5" fill="#7c3aed"/>
+<circle cx="375.64000000000004" cy="578" r="4.5" fill="#af52de"/>
 <text x="385.64000000000004" y="582" font-size="12" class="muted">AI / ML</text>
-<circle cx="459.68000000000006" cy="578" r="4.5" fill="#db2777"/>
+<circle cx="459.68000000000006" cy="578" r="4.5" fill="#34c759"/>
 <text x="469.68000000000006" y="582" font-size="12" class="muted">Apple</text>
 </svg>
