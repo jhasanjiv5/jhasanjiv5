@@ -26,8 +26,8 @@ ASSETS = ROOT / "assets"
 # in GitHub → Edit profile, not here.
 PROFILE = dict(
     themes=["Explainable AI", "Privacy-aware AI", "Ambient intelligence"],
-    stats=[("7", "peer-reviewed papers"), ("6 yrs", "applied AI research"),
-           ("29", "apps built in 30 days"), ("10+", "students mentored")],
+    stats=[("7", "peer-reviewed papers"), ("6+ yrs", "applied AI research"),
+           ("30", "apps built in 30 days"), ("10+", "students mentored")],
 )
 INTRO = dict(
     statement="I turn AI research into working systems.",
@@ -78,7 +78,7 @@ JOURNEY = [
     [  # row 3
         ("2019", "Research & teaching assistant", "University of St.Gallen", [("SPARQL", "data"), ("Scene graphs", "ai"), ("LLMs + RAG", "ai")]),
         ("2025", "PhD, Computer Science", "University of St.Gallen", [("MCP", "ai"), ("Vertex AI", "ai")]),
-        ("2026", "30 Ideas · 30 Days", "29 AI prototypes", [("Swift", "apple"), ("Go", "lang"), ("TypeScript", "web")]),
+        ("2026", "30 Ideas · 30 Days", "30 AI prototypes", [("Swift", "apple"), ("Go", "lang"), ("TypeScript", "web")]),
     ],
 ]
 TECH_COLORS = dict(lang="#0071e3", web="#ff375f", data="#30b0c7", iot="#ff9f0a", ai="#af52de", apple="#34c759")
